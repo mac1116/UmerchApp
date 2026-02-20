@@ -1,6 +1,6 @@
-# Umerch 🛍️ 🦁
+# Umerch App 🛍️ 
 
-**Umerch** is a dedicated e-commerce platform built exclusively for the **University of Mindanao (UM)** community. Designed with Flutter, it serves as a central hub for students and faculty to buy, sell, and trade university-related essentials.
+**Umerch App** is a dedicated e-commerce platform built exclusively for the **University of Mindanao (UM)** community. Designed with Flutter, it serves as a central hub for students and faculty to buy, sell, and trade university-related essentials.
 
 ---
 
