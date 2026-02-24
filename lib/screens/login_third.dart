@@ -35,28 +35,37 @@ class HomeScreen3 extends StatelessWidget {
             child: SafeArea(
               top: false,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 15,
+                ),
                 child: Transform.translate(
-                  offset: const Offset(0, -60),
+                  offset: const Offset(0, -30),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "No more going to store!",
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.left,
                         style: GoogleFonts.poppins(
                           fontSize: 34,
                           fontWeight: FontWeight.w600,
-                          color: const Color.fromARGB(255, 133, 7, 7),
+                          color: const Color(0xFF9C0306),
                         ),
                       ),
-                      Text(
-                        "Own the design product in seconds by viewing it from the app.",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 2,
+                          vertical: 0,
+                        ),
+                        child: Text(
+                          "Own the design product in seconds by viewing it from the app.",
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                          ),
                         ),
                       ),
                     ],
@@ -66,11 +75,9 @@ class HomeScreen3 extends StatelessWidget {
             ),
           ),
 
-          // pagination dots
           Padding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
             child: Row(
-              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
@@ -116,26 +123,33 @@ class HomeScreen3 extends StatelessWidget {
             ),
           ),
 
-          // next button
-          Positioned(
-            top: 895,
-            left: 260,
-            right: 20,
-            child: ElevatedButton(
-              onPressed: () => Navigator.of(context).pushNamed('/fourth'),
-              child: Text("Next"),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF9C0306),
-                foregroundColor: const Color(0xFFFFFFFF),
-                minimumSize: const Size(9, 60),
-                textStyle: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+
+              children: [
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).pushNamed('/fourth'),
+                  child: Text("Next"),
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(150, 50),
+                    backgroundColor: const Color(0xFF9C0306),
+                    foregroundColor: const Color(0xFFFFFFFF),
+                    textStyle: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      side: const BorderSide(
+                        width: 1,
+                        color: Color(0xFF9C0306),
+                      ),
+                    ),
+                  ),
                 ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
+              ],
             ),
           ),
         ],

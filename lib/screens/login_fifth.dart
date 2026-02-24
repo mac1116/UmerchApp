@@ -8,33 +8,20 @@ class HomeScreen5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      body: Stack(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+
         children: [
-          // welcome text
-          Positioned(
-            top: 300,
-            left: 0,
-            right: 0,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image(
-                  image: AssetImage('assets/images/main_logo.png'),
-                  fit: BoxFit.cover,
-                ),
-              ],
-            ),
+          Expanded(
+            // FIX: Ensure your path is a string and correct
+            child: Image.asset('assets/images/main_logo.png'),
           ),
 
-          // pagination dots
-          Positioned(
-            top: 850,
-            left: 0,
-            right: 0,
+          // welcome text
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
             child: Row(
-              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
@@ -81,25 +68,33 @@ class HomeScreen5 extends StatelessWidget {
           ),
 
           // next button
-          Positioned(
-            top: 895,
-            left: 260,
-            right: 20,
-            child: ElevatedButton(
-              onPressed: () => Navigator.of(context).pushNamed('/signin'),
-              child: Text("Sign In"),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF9C0306),
-                foregroundColor: const Color(0xFFFFFFFF),
-                minimumSize: const Size(9, 60),
-                textStyle: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+
+              children: [
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).pushNamed('/signin'),
+                  child: Text("Sign in"),
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(150, 50),
+                    backgroundColor: const Color(0xFF9C0306),
+                    foregroundColor: const Color(0xFFFFFFFF),
+                    textStyle: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      side: const BorderSide(
+                        width: 1,
+                        color: Color(0xFF9C0306),
+                      ),
+                    ),
+                  ),
                 ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
+              ],
             ),
           ),
         ],

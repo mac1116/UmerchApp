@@ -68,7 +68,7 @@ class HomeScreen2 extends StatelessWidget {
                         style: GoogleFonts.poppins(
                           fontSize: 34,
                           fontWeight: FontWeight.w600,
-                          color: const Color.fromARGB(255, 133, 7, 7),
+                          color: const Color(0xFF9C0306),
                         ),
                       ),
 
