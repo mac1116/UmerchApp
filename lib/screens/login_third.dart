@@ -8,16 +8,14 @@ class HomeScreen3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      body: Stack(
+      body: Column(
         children: [
           // top-rounded box
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
+          Expanded(
+            flex: 65,
             child: Container(
-              height: 600,
-              padding: const EdgeInsets.symmetric(),
+              width: double.infinity,
+              clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 color: const Color(0xFF9C0306),
                 borderRadius: const BorderRadius.vertical(
@@ -32,62 +30,65 @@ class HomeScreen3 extends StatelessWidget {
             ),
           ),
           // welcome text
-          Positioned(
-            top: 620,
-            left: 0,
-            right: 0,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  "No more going to store!",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                    fontSize: 34,
-                    fontWeight: FontWeight.w600,
-                    color: const Color.fromARGB(255, 133, 7, 7),
+          Expanded(
+            flex: 35,
+            child: SafeArea(
+              top: false,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                child: Transform.translate(
+                  offset: const Offset(0, -60),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "No more going to store!",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          fontSize: 34,
+                          fontWeight: FontWeight.w600,
+                          color: const Color.fromARGB(255, 133, 7, 7),
+                        ),
+                      ),
+                      Text(
+                        "Own the design product in seconds by viewing it from the app.",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Text(
-                  "Own the design product in seconds by viewing it from the app.",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: const Color.fromARGB(255, 0, 0, 0),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
 
           // pagination dots
-          Positioned(
-            top: 850,
-            left: 0,
-            right: 0,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: const Color(0xFF9C0306),
+                    color: const Color.fromARGB(255, 186, 186, 186),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  width: 25,
+                  width: 15,
                   height: 10,
                 ),
                 const SizedBox(width: 3),
 
                 Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 186, 186, 186),
+                    color: const Color(0xFF9C0306),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  width: 15,
+                  width: 25,
                   height: 10,
                 ),
                 const SizedBox(width: 3),

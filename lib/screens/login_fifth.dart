@@ -39,40 +39,40 @@ class HomeScreen5 extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 186, 186, 186),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  width: 15,
+                  height: 10,
+                ),
+                const SizedBox(width: 3),
+
+                Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 186, 186, 186),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  width: 15,
+                  height: 10,
+                ),
+                const SizedBox(width: 3),
+
+                Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 186, 186, 186),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  width: 15,
+                  height: 10,
+                ),
+                const SizedBox(width: 3),
+
+                Container(
+                  decoration: BoxDecoration(
                     color: const Color(0xFF9C0306),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   width: 25,
-                  height: 10,
-                ),
-                const SizedBox(width: 3),
-
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 186, 186, 186),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  width: 15,
-                  height: 10,
-                ),
-                const SizedBox(width: 3),
-
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 186, 186, 186),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  width: 15,
-                  height: 10,
-                ),
-                const SizedBox(width: 3),
-
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 186, 186, 186),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  width: 15,
                   height: 10,
                 ),
                 const SizedBox(width: 3),
@@ -86,7 +86,7 @@ class HomeScreen5 extends StatelessWidget {
             left: 260,
             right: 20,
             child: ElevatedButton(
-              onPressed: () => Navigator.of(context).pushNamed('/'),
+              onPressed: () => Navigator.of(context).pushNamed('/signin'),
               child: Text("Sign In"),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF9C0306),
