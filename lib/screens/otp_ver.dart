@@ -31,7 +31,7 @@ class _OtpVerificationState extends State<OtpVerification> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -44,7 +44,7 @@ class _OtpVerificationState extends State<OtpVerification> {
               ),
             ),
 
-            const SizedBox(height: 12),
+            const SizedBox(height: 7),
 
             Text(
               'Please check your email address and write the OTP Code you received here.',
@@ -62,7 +62,7 @@ class _OtpVerificationState extends State<OtpVerification> {
               children: List.generate(4, (index) {
                 const SizedBox(width: 100, height: 100);
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: SizedBox(
                     width: 60,
                     height: 200,
@@ -102,7 +102,7 @@ class _OtpVerificationState extends State<OtpVerification> {
               }),
             ),
 
-            const SizedBox(height: 430),
+            const SizedBox(height: 380),
 
             SizedBox(
               width: double.infinity,

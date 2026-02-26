@@ -31,7 +31,7 @@ class _SignInState extends State<SignIn> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -44,7 +44,7 @@ class _SignInState extends State<SignIn> {
               ),
             ),
 
-            const SizedBox(height: 12),
+            const SizedBox(height: 7),
 
             Text(
               'Please enter your email & password to sign in',
@@ -186,7 +186,7 @@ class _SignInState extends State<SignIn> {
                       color: const Color(0xFF969696).withOpacity(0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    width: 420,
+                    width: 360,
                     height: 2,
                   ),
                 ],
@@ -222,7 +222,7 @@ class _SignInState extends State<SignIn> {
                 label: Text(
                   'Continue with Email',
                   style: GoogleFonts.poppins(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: const Color.fromARGB(255, 0, 0, 0),
                     fontWeight: FontWeight.w600,
                   ),
@@ -258,7 +258,7 @@ class _SignInState extends State<SignIn> {
                 label: Text(
                   'Continue with Google',
                   style: GoogleFonts.poppins(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: const Color.fromARGB(255, 0, 0, 0),
                     fontWeight: FontWeight.w600,
                   ),
@@ -266,7 +266,7 @@ class _SignInState extends State<SignIn> {
               ),
             ),
 
-            const SizedBox(height: 200),
+            const SizedBox(height: 90),
 
             SizedBox(
               width: double.infinity,
