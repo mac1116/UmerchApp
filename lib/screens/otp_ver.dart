@@ -119,7 +119,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                   ),
                 ),
                 onPressed: () {
-                  // Handle sign in with Google
+                  showCustomDialog(context);
                 },
                 child: Text(
                   'Sign In',
@@ -134,6 +134,41 @@ class _OtpVerificationState extends State<OtpVerification> {
           ],
         ),
       ),
+    );
+  }
+
+  void showCustomDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 10,
+              offset: const Offset(0, 5),
+            ),
+          ],
+          color: const Color(0xFFFFFFFF),
+          borderRadius: BorderRadius.circular(20.0),
+        );
+        return AlertDialog(
+          title: Text('Modal Title'),
+          content: Text('This is a modal dialog'),
+          backgroundColor: const Color(0xFFFFFFFF),
+          titleTextStyle: GoogleFonts.poppins(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            color: const Color(0xFF9C0306),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
