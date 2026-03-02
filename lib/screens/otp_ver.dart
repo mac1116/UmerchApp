@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/gestures.dart';
 
 class OtpVerification extends StatefulWidget {
   const OtpVerification({super.key});
@@ -11,6 +12,8 @@ class OtpVerification extends StatefulWidget {
 bool rememberMe = false;
 
 class _OtpVerificationState extends State<OtpVerification> {
+  bool isResendingOtp = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,12 +63,11 @@ class _OtpVerificationState extends State<OtpVerification> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(4, (index) {
-                const SizedBox(width: 100, height: 100);
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: SizedBox(
                     width: 60,
-                    height: 200,
+                    height: 60,
                     child: TextField(
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
@@ -101,8 +103,62 @@ class _OtpVerificationState extends State<OtpVerification> {
                 );
               }),
             ),
+            const SizedBox(height: 60),
 
-            const SizedBox(height: 380),
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Didn\'t receive the code?',
+                    style: GoogleFonts.poppins(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      // Handle resend OTP button press
+                    },
+                    child: Text(
+                      'Resend OTP',
+                      style: GoogleFonts.poppins(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFF9C0306),
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ], // Added missing closing bracket for children
+              ),
+            ),
+            Center(
+              child: RichText(
+                text: TextSpan(
+                  style: GoogleFonts.poppins(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
+                  children: [
+                    const TextSpan(text: 'You can resend code in '),
+                    TextSpan(
+                      text: '30',
+                      style: const TextStyle(color: Color(0xFF9C0306)),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          // Handle your tap here
+                        },
+                    ),
+                    const TextSpan(text: ' s'),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 393),
 
             SizedBox(
               width: double.infinity,
