@@ -58,7 +58,7 @@ class HomeScreen2 extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                 child: Transform.translate(
-                  offset: const Offset(0, -60),
+                  offset: const Offset(0, -70),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

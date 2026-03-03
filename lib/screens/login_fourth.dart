@@ -40,7 +40,7 @@ class HomeScreen4 extends StatelessWidget {
                   vertical: 15,
                 ),
                 child: Transform.translate(
-                  offset: const Offset(0, -11),
+                  offset: const Offset(0, -20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
