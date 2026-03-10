@@ -55,9 +55,14 @@ class _ProductCardState extends State<ProductCard> {
                       top: Radius.circular(12),
                     ),
                   ),
-                  child: Center(
-                    child: Image.network(
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(12),
+                    ),
+                    child: Image.asset(
                       widget.product.imageUrl,
+                      width: double.infinity,
+                      height: 150,
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) => Icon(
                         Icons.image_not_supported,

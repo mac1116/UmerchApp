@@ -65,7 +65,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
       description: 'Premium quality sports jersey',
       price: 500,
       originalPrice: 600,
-      imageUrl: 'https://via.placeholder.com/300x300?text=Esports+Jersey',
+      imageUrl: 'assets/images/51.png',
       stock: 125,
       category: 'Shirts',
       isFavorite: false,
@@ -76,7 +76,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
       description: 'Eco-friendly wooden tumbler',
       price: 500,
       originalPrice: 600,
-      imageUrl: 'https://via.placeholder.com/300x300?text=Wooden+Tumbler',
+      imageUrl: 'assets/images/6.png',
       stock: 125,
       category: 'Bottles',
       isFavorite: false,
@@ -87,18 +87,18 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
       description: 'Comfortable cotton blend',
       price: 350,
       originalPrice: 450,
-      imageUrl: 'https://via.placeholder.com/300x300?text=T-Shirt',
+      imageUrl: 'assets/images/3.png',
       stock: 85,
       category: 'Shirts',
       isFavorite: false,
     ),
     Product(
       id: '4',
-      name: 'Stainless Steel Bottle',
+      name: 'Electric Tumbler',
       description: 'Keep drinks cold for hours',
       price: 450,
       originalPrice: 600,
-      imageUrl: 'https://via.placeholder.com/300x300?text=Steel+Bottle',
+      imageUrl: 'assets/images/5.png',
       stock: 156,
       category: 'Bottles',
       isFavorite: false,
@@ -109,7 +109,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
       description: 'Adjustable classic cap',
       price: 250,
       originalPrice: 350,
-      imageUrl: 'https://via.placeholder.com/300x300?text=Campus+Cap',
+      imageUrl: 'assets/images/21.png',
       stock: 200,
       category: 'Accessories',
       isFavorite: false,
@@ -120,7 +120,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
       description: 'Cozy and comfortable hoodie',
       price: 650,
       originalPrice: 850,
-      imageUrl: 'https://via.placeholder.com/300x300?text=Hoodie',
+      imageUrl: 'assets/images/14.png',
       stock: 95,
       category: 'Shirts',
       isFavorite: false,
@@ -131,54 +131,48 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
       description: 'Stylish shoulder bag',
       price: 800,
       originalPrice: 1000,
-      imageUrl: 'https://via.placeholder.com/300x300?text=Branded+Bag',
+      imageUrl: 'assets/images/17.png',
       stock: 50,
       category: 'Others',
       isFavorite: false,
     ),
     Product(
       id: '8',
-      name: 'Water Bottle Set',
-      description: 'Pack of 2 premium bottles',
+      name: 'Pen',
+      description: 'Nice pen for writing',
       price: 900,
       originalPrice: 1200,
-      imageUrl: 'https://via.placeholder.com/300x300?text=Bottle+Set',
+      imageUrl: 'assets/images/32.png',
       stock: 75,
-      category: 'Bottles',
+      category: 'Others',
       isFavorite: false,
     ),
   ];
 
-  Widget _buildNavItem(
-    IconData icon,
-    String label,
-    int index,
-    double iconSize,
-    double fontSize,
-  ) {
+  Widget _buildNavItem(IconData icon, String label, int index) {
     final isSelected = _selectedNavIndex == index;
-    final color = isSelected ? const Color(0xFF9C0306) : Colors.grey;
-    return Expanded(
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => setState(() => _selectedNavIndex = index),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(icon, color: color, size: iconSize),
-              const SizedBox(height: 4),
-              Text(
-                label,
-                style: GoogleFonts.poppins(
-                  fontSize: fontSize,
-                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-                  color: color,
-                ),
+    final color = isSelected
+        ? const Color(0xFF9C0306)
+        : const Color(0xFF9E9E9E);
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => setState(() => _selectedNavIndex = index),
+      child: SizedBox(
+        width: 64,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, color: color, size: 24),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: GoogleFonts.poppins(
+                fontSize: 11,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                color: color,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -244,7 +238,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
                     ),
                     const SizedBox(width: 12),
                     Text(
-                      'Hi, Yosh',
+                      'Hi, Mamser',
                       style: GoogleFonts.poppins(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
@@ -443,12 +437,12 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
             ),
             const SizedBox(height: 16),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CategoryCard(
-                    icon: '👕',
+                    icon: Icons.checkroom_outlined,
                     label: 'Shirt',
                     onTap: () {
                       setState(() {
@@ -457,7 +451,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
                     },
                   ),
                   CategoryCard(
-                    icon: '✨',
+                    icon: Icons.umbrella_outlined,
                     label: 'Accessories',
                     onTap: () {
                       setState(() {
@@ -466,7 +460,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
                     },
                   ),
                   CategoryCard(
-                    icon: '🍾',
+                    icon: Icons.local_drink_outlined,
                     label: 'Bottles',
                     onTap: () {
                       setState(() {
@@ -475,7 +469,7 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
                     },
                   ),
                   CategoryCard(
-                    icon: '🎒',
+                    icon: Icons.backpack_outlined,
                     label: 'Others',
                     onTap: () {
                       setState(() {
@@ -560,96 +554,68 @@ class _HomeScreenMainState extends State<HomeScreenMain> {
           ],
         ),
       ),
-      bottomNavigationBar: LayoutBuilder(
-        builder: (context, constraints) {
-          final iconSize = constraints.maxWidth < 360 ? 20.0 : 24.0;
-          final fontSize = constraints.maxWidth < 360 ? 10.0 : 12.0;
-          final fabSize = constraints.maxWidth < 360 ? 52.0 : 64.0;
-          final fabIconSize = constraints.maxWidth < 360 ? 24.0 : 30.0;
-          return Stack(
-            clipBehavior: Clip.none,
-            alignment: Alignment.bottomCenter,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.08),
-                      blurRadius: 10,
-                      offset: const Offset(0, -2),
-                    ),
-                  ],
+      bottomNavigationBar: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.bottomCenter,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  blurRadius: 10,
+                  offset: const Offset(0, -2),
                 ),
-                padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).padding.bottom,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    _buildNavItem(
-                      Icons.home_filled,
-                      'Home',
-                      0,
-                      iconSize,
-                      fontSize,
-                    ),
-                    _buildNavItem(
-                      Icons.search,
-                      'Search',
-                      1,
-                      iconSize,
-                      fontSize,
-                    ),
-                    SizedBox(width: fabSize),
-                    _buildNavItem(
-                      Icons.favorite_outline,
-                      'Favorites',
-                      3,
-                      iconSize,
-                      fontSize,
-                    ),
-                    _buildNavItem(
-                      Icons.person_outline,
-                      'Profile',
-                      4,
-                      iconSize,
-                      fontSize,
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                top: -(fabSize / 2.4),
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() => _selectedNavIndex = 2);
-                  },
-                  child: Container(
-                    width: fabSize,
-                    height: fabSize,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF9C0306),
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFF9C0306).withOpacity(0.3),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Icon(
-                      Icons.shopping_cart,
-                      color: Colors.white,
-                      size: fabIconSize,
-                    ),
+              ],
+            ),
+            child: SafeArea(
+              top: false,
+              child: SizedBox(
+                height: 64,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _buildNavItem(Icons.home_filled, 'Home', 0),
+                      _buildNavItem(Icons.search, 'Search', 1),
+                      const SizedBox(width: 64),
+                      _buildNavItem(Icons.favorite_outline, 'Favorites', 3),
+                      _buildNavItem(Icons.person_outline, 'Profile', 4),
+                    ],
                   ),
                 ),
               ),
-            ],
-          );
-        },
+            ),
+          ),
+          Positioned(
+            top: -20,
+            child: GestureDetector(
+              onTap: () => setState(() => _selectedNavIndex = 2),
+              child: Container(
+                width: 75,
+                height: 75,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF9C0306),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF9C0306).withOpacity(0.3),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.shopping_cart,
+                  color: Colors.white,
+                  size: 28,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
