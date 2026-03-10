@@ -6,6 +6,7 @@ import 'screens/login_fourth.dart';
 import 'screens/login_fifth.dart';
 import 'screens/sign_in.dart';
 import 'screens/otp_ver.dart';
+import 'screens/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Umerch',
-      initialRoute: '/otp',
+      initialRoute: '/',
       routes: {
-        '/': (ctx) => const HomeScreen(),
+        '/': (ctx) => const HomeScreenMain(),
         '/second': (ctx) => const HomeScreen2(),
         '/third': (ctx) => const HomeScreen3(),
         '/fourth': (ctx) => const HomeScreen4(),

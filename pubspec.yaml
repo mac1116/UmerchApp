@@ -66,6 +66,10 @@ flutter:
     - assets/images/logotrans4.png
     - assets/images/ambass1.png
     - assets/images/ambass2.png
+    - assets/images/crop1.png
+    - assets/images/crop2.png
+    - assets/images/crop3.png
+    - assets/images/crop4.png
     - assets/images/main_logo.png
     - assets/icons/google.png
     - assets/icons/gmail.png
