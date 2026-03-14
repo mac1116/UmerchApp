@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Umerch',
-      initialRoute: '/',
+      initialRoute: '//',
       routes: {
+        '//': (ctx) => const HomeScreen(),
         '/': (ctx) => const HomeScreenMain(),
         '/second': (ctx) => const HomeScreen2(),
         '/third': (ctx) => const HomeScreen3(),

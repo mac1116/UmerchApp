@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
+import 'home_screen.dart';
 
 class OtpVerification extends StatefulWidget {
   const OtpVerification({super.key});
@@ -175,7 +176,13 @@ class _OtpVerificationState extends State<OtpVerification> {
                   ),
                 ),
                 onPressed: () {
-                  showCustomDialog(context);
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreenMain(),
+                    ),
+                    (route) => false,
+                  );
                 },
                 child: Text(
                   'Sign In',
